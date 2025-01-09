@@ -60,7 +60,9 @@ int main()
 
 
 int registro() //responsavel por cadastrar os usuarios no sistema
-{
+{	
+	
+	int opcao=0;
 	//inicio da criacao de variaveis/string
 	char arquivo[40];
 	char cpf[40];
@@ -120,13 +122,26 @@ int registro() //responsavel por cadastrar os usuarios no sistema
 	fprintf(file,"\n");
 	fclose(file);	
 	
-   	system("pause");
+	
+	printf("\n\nCadastro realizado com sucesso!\n");
+	printf("Novo cadastro - Digite 1.\n");
+	printf("Voltar ao menu - Digite qualquer número.\n");
+	scanf("%d", &opcao);
+	system("cls");
+	
+	switch(opcao)
+	{
+		case 1:
+		registro();
+		break;
+		
+	}
 }
 
 int consulta()
 {
 	setlocale(LC_ALL,"Portuguese");
-	
+	int opcao=0;
 	char cpf[40];
 	char conteudo[200];
 		
@@ -150,14 +165,28 @@ int consulta()
 	{
 	
 	printf("%s", conteudo);
-	printf("\n");
+	printf("\n\n");
 	}
 	
-	system("pause");
+	
+	printf("Nova consulta - Digite 1.\n");
+	printf("Voltar ao menu - Digite qualquer número.\n");
+	scanf("%d", &opcao);
+	system("cls");
+	
+	switch(opcao)
+	{
+		case 1:
+		consulta();
+		break;
+		
+	}
+	
 }
 
 int deletar()
 {
+	int opcao=0;
 	char cpf[40];
 	
 	printf("Você escolheu deletar nomes!\nDigite o CPF a ser deletado: ");
@@ -178,5 +207,18 @@ int deletar()
 		printf("Cadastro deletado com sucesso!\n");
 		
 	}
-	system("pause");
+	
+	printf("\n\nDeletar mais um cadastro - Digite 1.\n");
+	printf("Voltar ao menu - Digite qualquer número.\n");
+	scanf("%d", &opcao);
+	system("cls");
+	
+	switch(opcao)
+	{
+		case 1:
+		deletar();
+		break;
+		
+	}
+	
 }
